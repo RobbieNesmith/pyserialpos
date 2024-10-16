@@ -4,16 +4,16 @@
 # https://gist.github.com/jpmens/f0681100ffcec1c5275d
 
 import serial
-from constants import *
+from character_constants import *
 
 class LD220:
   def __init__(self, device, baud):
     self.ser = serial.Serial(device, baud, timeout=5)
 
-  def send(self, *bytes):
-    self.ser.write(bytes(bytes))
+  def send(self, *data):
+    self.ser.write(bytes(data))
 
-  def clear(self):
+  def reset(self):
     self.send(ESC, 0x40)
 
   def cursor_left(self):
@@ -55,7 +55,7 @@ class LD220:
   def xy(self, x, y):
     self.send(US, 0x24, x, y)
 
-  def showtime(self, hour, minute):
+  def show_time(self, hour, minute):
     self.send(0x1F, 0x54, hour, minute)
 
   def disconnect(self):
