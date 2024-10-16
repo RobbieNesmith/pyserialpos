@@ -1,0 +1,11 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pypos"
+version = "0.0.0"
+authors = [
+  {name = "Robbie Nesmith", email = "bobberto1995@gmail.com"}
+]
+description = "Package for communicating with serial POS displays"
