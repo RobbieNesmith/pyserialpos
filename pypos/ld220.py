@@ -13,6 +13,9 @@ class LD220:
   def send(self, *data):
     self.ser.write(bytes(data))
 
+  def send_text(self, text):
+    self.send(*(text.encode("UTF-8")))
+
   def reset(self):
     self.send(ESC, 0x40)
 
