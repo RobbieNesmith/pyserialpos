@@ -4,7 +4,7 @@
 # https://gist.github.com/jpmens/f0681100ffcec1c5275d
 
 import serial
-from character_constants import *
+from . character_constants import *
 
 class LD220:
   def __init__(self, device, baud):
