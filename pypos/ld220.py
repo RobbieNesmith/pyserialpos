@@ -65,7 +65,7 @@ class LD220:
     self.send(ESC, 0x74, table_id)
 
   def select_international_charset(self, charset):
-    self.send(ESC, 0x52, charset.value)
+    self.send(ESC, 0x52, charset)
 
   def invert_characters(self, should_invert):
     self.send(US, 0x72, should_invert)
